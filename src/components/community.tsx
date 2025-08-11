@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
@@ -18,37 +19,37 @@ export default function Community() {
                     </div>
                     <div className="absolute -top-8 -left-8">
                         <Avatar className="w-16 h-16">
-                            <AvatarImage src="https://placehold.co/64x64.png" data-ai-hint="traveler photo"/>
+                            <AvatarImage src="https://randomuser.me/api/portraits/women/77.jpg" data-ai-hint="traveler photo"/>
                             <AvatarFallback>U1</AvatarFallback>
                         </Avatar>
                     </div>
                     <div className="absolute top-1/4 -right-4">
                         <Avatar className="w-12 h-12">
-                            <AvatarImage src="https://placehold.co/48x48.png" data-ai-hint="tourist portrait"/>
+                            <AvatarImage src="https://randomuser.me/api/portraits/men/77.jpg" data-ai-hint="tourist portrait"/>
                             <AvatarFallback>U2</AvatarFallback>
                         </Avatar>
                     </div>
                      <div className="absolute top-1/2 -left-12">
                         <Avatar className="w-20 h-20">
-                            <AvatarImage src="https://placehold.co/80x80.png" data-ai-hint="backpacker smiling"/>
+                            <AvatarImage src="https://randomuser.me/api/portraits/women/78.jpg" data-ai-hint="backpacker smiling"/>
                             <AvatarFallback>U3</AvatarFallback>
                         </Avatar>
                     </div>
                     <div className="absolute -bottom-8 left-1/4">
                         <Avatar className="w-14 h-14">
-                            <AvatarImage src="https://placehold.co/56x56.png" data-ai-hint="explorer photo"/>
+                            <AvatarImage src="https://randomuser.me/api/portraits/men/78.jpg" data-ai-hint="explorer photo"/>
                             <AvatarFallback>U4</AvatarFallback>
                         </Avatar>
                     </div>
                     <div className="absolute -bottom-4 -right-4">
                         <Avatar className="w-16 h-16">
-                            <AvatarImage src="https://placehold.co/64x64.png" data-ai-hint="hiker profile"/>
+                            <AvatarImage src="https://randomuser.me/api/portraits/women/79.jpg" data-ai-hint="hiker profile"/>
                             <AvatarFallback>U5</AvatarFallback>
                         </Avatar>
                     </div>
                      <div className="absolute bottom-1/4 -left-2">
                         <Avatar className="w-10 h-10">
-                            <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="adventurer face"/>
+                            <AvatarImage src="https://randomuser.me/api/portraits/men/79.jpg" data-ai-hint="adventurer face"/>
                             <AvatarFallback>U6</AvatarFallback>
                         </Avatar>
                     </div>

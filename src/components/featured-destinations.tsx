@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,28 +9,28 @@ const destinations = [
     name: 'Santorini, Greece',
     price: 890,
     rating: 5.0,
-    image: 'https://placehold.co/400x500.png',
+    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1470',
     hint: 'santorini greece'
   },
   {
     name: 'Dubai, UAE',
     price: 890,
     rating: 5.0,
-    image: 'https://placehold.co/400x500.png',
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1470',
     hint: 'dubai city'
   },
   {
     name: 'Kyoto, Japan',
     price: 890,
     rating: 5.0,
-    image: 'https://placehold.co/400x500.png',
+    image: 'https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1470',
     hint: 'kyoto shrine'
   },
   {
     name: 'Paris, France',
     price: 890,
     rating: 5.0,
-    image: 'https://placehold.co/400x500.png',
+    image: 'https://images.unsplash.com/photo-1502602898657-3e91760c0341?q=80&w=1470',
     hint: 'paris eiffel'
   },
 ];

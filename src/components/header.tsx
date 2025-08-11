@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -39,7 +40,7 @@ export default function Header() {
             </Button>
             <div className="flex items-center gap-3">
                 <Avatar>
-                    <AvatarImage src="https://placehold.co/40x40.png" alt="Mohammad" data-ai-hint="man portrait"/>
+                    <AvatarImage src="https://randomuser.me/api/portraits/men/75.jpg" alt="Mohammad" data-ai-hint="man portrait"/>
                     <AvatarFallback>M</AvatarFallback>
                 </Avatar>
                 <div>

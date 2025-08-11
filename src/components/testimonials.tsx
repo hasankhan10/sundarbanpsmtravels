@@ -20,14 +20,16 @@ export default function Testimonials() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative w-[500px] h-[600px]">
+              <div className="relative w-full h-full">
                 <Image 
-                    src="https://placehold.co/500x600.png"
+                    src="https://images.unsplash.com/photo-1528732224075-5cde374e5a56?q=80&w=1287"
                     data-ai-hint="happy traveler"
                     alt="Happy client"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-2xl"
                 />
+              </div>
             </div>
             <div>
                  <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-8">

@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { CheckCircle } from 'lucide-react';
@@ -43,7 +44,7 @@ export default function WhyChooseUs() {
           <div className="relative flex items-center justify-center">
             <div className="w-[500px] h-[500px] bg-primary/20 rounded-full blur-3xl"></div>
             <Image
-              src="https://placehold.co/500x500.png"
+              src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1287"
               data-ai-hint="travel planning"
               alt="Why Choose Us Image"
               width={500}

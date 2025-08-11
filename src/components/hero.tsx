@@ -59,24 +59,24 @@ export default function Hero() {
         <div className="relative h-full min-h-[500px] hidden lg:block">
             <div className="absolute top-0 left-1/4 w-[300px] h-[200px] rounded-2xl overflow-hidden shadow-lg transform -rotate-6">
               <div className="relative w-full h-full">
-                <Image src="https://placehold.co/300x200.png" data-ai-hint="beach vacation" alt="Explore" layout="fill" objectFit="cover" />
+                <Image src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?q=80&w=1470" data-ai-hint="beach vacation" alt="Explore" layout="fill" objectFit="cover" />
               </div>
             </div>
             <div className="absolute top-1/4 -left-8 w-[450px] h-[300px] rounded-2xl overflow-hidden shadow-2xl z-10">
               <div className="relative w-full h-full">
-                <Image src="https://placehold.co/450x300.png" data-ai-hint="mountain adventure" alt="Explore" layout="fill" objectFit="cover" />
+                <Image src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1470" data-ai-hint="mountain adventure" alt="Explore" layout="fill" objectFit="cover" />
               </div>
                 <div className="absolute bottom-4 right-4 flex items-center gap-2 bg-white/80 backdrop-blur-sm p-2 rounded-full">
                     <Avatar>
-                        <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="woman traveler"/>
+                        <AvatarImage src="https://randomuser.me/api/portraits/women/75.jpg" data-ai-hint="woman traveler"/>
                         <AvatarFallback>A</AvatarFallback>
                     </Avatar>
                      <Avatar className="-ml-4 border-2 border-white">
-                        <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="man explorer"/>
+                        <AvatarImage src="https://randomuser.me/api/portraits/men/76.jpg" data-ai-hint="man explorer"/>
                         <AvatarFallback>B</AvatarFallback>
                     </Avatar>
                      <Avatar className="-ml-4 border-2 border-white">
-                        <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="tourist smiling"/>
+                        <AvatarImage src="https://randomuser.me/api/portraits/women/76.jpg" data-ai-hint="tourist smiling"/>
                         <AvatarFallback>C</AvatarFallback>
                     </Avatar>
                     <div>
@@ -87,12 +87,12 @@ export default function Hero() {
             </div>
             <div className="absolute bottom-1/4 right-0 w-[400px] h-[250px] rounded-2xl overflow-hidden shadow-lg transform rotate-3">
               <div className="relative w-full h-full">
-                 <Image src="https://placehold.co/400x250.png" data-ai-hint="cityscape europe" alt="Explore" layout="fill" objectFit="cover" />
+                 <Image src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=1470" data-ai-hint="cityscape europe" alt="Explore" layout="fill" objectFit="cover" />
               </div>
             </div>
              <div className="absolute bottom-0 left-1/2 w-[350px] h-[220px] rounded-2xl overflow-hidden shadow-lg transform -translate-x-1/2">
               <div className="relative w-full h-full">
-                 <Image src="https://placehold.co/350x220.png" data-ai-hint="tropical island" alt="Explore" layout="fill" objectFit="cover" />
+                 <Image src="https://images.unsplash.com/photo-1454789476662-53eb23ba5907?q=80&w=1352" data-ai-hint="tropical island" alt="Explore" layout="fill" objectFit="cover" />
               </div>
             </div>
         </div>
