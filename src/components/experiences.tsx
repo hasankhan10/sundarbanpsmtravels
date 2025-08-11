@@ -1,5 +1,6 @@
 import { Plane, Ticket, Briefcase, Phone } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import MotionDiv from './ui/motion-div';
 
 const services = [
   {
@@ -24,6 +25,11 @@ const services = [
   },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 export default function Experiences() {
   return (
     <section id="services" className="w-full py-20 lg:py-28 bg-background">
@@ -35,15 +41,24 @@ export default function Experiences() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="text-center bg-card shadow-sm hover:shadow-lg transition-shadow duration-300 ease-in-out border-transparent p-6">
-              <CardContent className="flex flex-col items-center gap-4">
-                <div className="p-4 bg-primary/10 rounded-full">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-semibold">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
-              </CardContent>
-            </Card>
+             <MotionDiv
+              key={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              variants={cardVariants}
+            >
+              <Card className="text-center bg-card shadow-sm hover:shadow-lg transition-all duration-300 ease-in-out border-transparent p-6 hover:-translate-y-2">
+                <CardContent className="flex flex-col items-center gap-4">
+                  <div className="p-4 bg-primary/10 rounded-full">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold">{service.title}</h3>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </CardContent>
+              </Card>
+            </MotionDiv>
           ))}
         </div>
       </div>
