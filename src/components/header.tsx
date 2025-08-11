@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
 const navLinks = [
+  { label: "Home", href: "#home" },
   { label: "About Us", href: "#about-us" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
@@ -14,19 +15,23 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
-  const [activeLink, setActiveLink] = useState("About Us");
+  const [activeLink, setActiveLink] = useState("Home");
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100;
+      
+      const sections = navLinks.map(link => {
+        if (link.href.startsWith("#")) {
+          return document.getElementById(link.href.substring(1));
+        }
+        return null;
+      }).filter(Boolean);
 
-      // Check if at the top of the page
-      if (window.scrollY < 100) {
-        setActiveLink("About Us");
+      if (window.scrollY < 200) {
+        setActiveLink("Home");
         return;
       }
-      
-      const sections = navLinks.map(link => document.getElementById(link.href.substring(1)));
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
@@ -39,8 +44,7 @@ export default function Header() {
 
     if(pathname === '/'){
         window.addEventListener("scroll", handleScroll);
-        // Set initial active link on mount
-        handleScroll();
+        handleScroll(); // Set initial active link
         return () => window.removeEventListener("scroll", handleScroll);
     }
   }, [pathname]);

@@ -9,7 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-secondary/30 pt-12 pb-20">
+    <section id="home" className="relative w-full bg-secondary/30 pt-12 pb-20">
       <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <h1 className="text-5xl font-bold tracking-tighter md:text-6xl lg:text-7xl">
