@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-background text-foreground border-t">
-      <div className="container mx-auto px-4 md:px-6 py-12 lg:py-20">
+      <div className="container mx-auto px-4 md:px-6 py-8 lg:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="space-y-4 col-span-1 md:col-span-2 lg:col-span-1">
             <h3 className="text-2xl font-bold text-primary">Traventure</h3>
@@ -37,7 +37,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
+        <div className="mt-8 pt-6 border-t text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Traventure. All Rights Reserved.</p>
         </div>
       </div>
