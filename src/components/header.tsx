@@ -19,32 +19,30 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100;
-      
-      const sections = navLinks.map(link => {
-        if (link.href.startsWith("#")) {
-          return document.getElementById(link.href.substring(1));
-        }
-        return null;
-      }).filter(Boolean);
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      let currentSection = "";
 
-      if (window.scrollY < 200) {
+      navLinks.forEach(link => {
+        const section = document.getElementById(link.href.substring(1));
+        if (section) {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSection = link.label;
+            }
+        }
+      });
+        
+      if(currentSection !== ""){
+        setActiveLink(currentSection);
+      } else if (window.scrollY < 200) {
         setActiveLink("Home");
-        return;
-      }
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveLink(navLinks[i].label);
-          break;
-        }
       }
     };
 
     if(pathname === '/'){
         window.addEventListener("scroll", handleScroll);
-        handleScroll(); // Set initial active link
+        handleScroll();
         return () => window.removeEventListener("scroll", handleScroll);
     }
   }, [pathname]);
