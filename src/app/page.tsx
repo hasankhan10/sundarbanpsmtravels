@@ -7,6 +7,8 @@ import Hero from "@/components/hero";
 import Testimonials from "@/components/testimonials";
 import WhyChooseUs from "@/components/why-choose-us";
 import MotionDiv from "@/components/ui/motion-div";
+import FAQ from "@/components/faq";
+import Contact from "@/components/contact";
 
 const variants = {
   hidden: { opacity: 0, y: 20 },
@@ -37,6 +39,7 @@ export default function Home() {
         >
           <Experiences />
         </MotionDiv>
+        <section id="about-us">
         <MotionDiv
           initial="hidden"
           whileInView="visible"
@@ -54,6 +57,25 @@ export default function Home() {
           variants={variants}
         >
           <Testimonials />
+        </MotionDiv>
+        </section>
+        <MotionDiv
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          variants={variants}
+        >
+          <FAQ />
+        </MotionDiv>
+        <MotionDiv
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          variants={variants}
+        >
+          <Contact />
         </MotionDiv>
         <MotionDiv
           initial="hidden"

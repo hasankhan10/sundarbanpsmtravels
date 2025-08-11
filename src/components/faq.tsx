@@ -4,8 +4,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
 
 const faqs = [
     {
@@ -30,16 +28,14 @@ const faqs = [
     }
 ]
 
-export default function FAQPage() {
+export default function FAQ() {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
-      <Header />
-      <main className="flex-1 py-20 lg:py-28">
+    <section id="faq" className="w-full py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
-                 <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                 <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                     Frequently Asked Questions
-                </h1>
+                </h2>
                 <p className="mt-4 text-lg text-muted-foreground">
                     Find answers to common questions about our services and booking process.
                 </p>
@@ -57,8 +53,6 @@ export default function FAQPage() {
                 </Accordion>
             </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </section>
   );
 }
