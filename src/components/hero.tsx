@@ -5,15 +5,16 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="relative h-[80vh] w-full flex items-center justify-center text-white">
+      <div className="absolute inset-0 bg-black/50 z-0" />
       <Image
         src="https://placehold.co/1920x1080.png"
         alt="Exotic destination background"
         data-ai-hint="exotic destination"
         fill
-        className="object-cover -z-10 brightness-50"
+        className="object-cover -z-10"
         priority
       />
-      <div className="container mx-auto px-4 md:px-6 text-center">
+      <div className="container mx-auto px-4 md:px-6 text-center z-10">
         <div className="max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-12 duration-1000">
           <h1 className="text-4xl font-headline font-bold drop-shadow-2xl md:text-6xl lg:text-7xl">
             Discover the World's Most Luxurious Adventures
