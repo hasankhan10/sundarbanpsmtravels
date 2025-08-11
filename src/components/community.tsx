@@ -7,7 +7,7 @@ export default function Community() {
     return (
         <section id="community" className="w-full py-20 lg:py-28 bg-background">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="bg-secondary/50 rounded-2xl p-8 md:p-12 lg:p-16 relative overflow-hidden">
+                <div className="bg-secondary rounded-2xl p-8 md:p-12 lg:p-16 relative overflow-hidden">
                     <div className="flex flex-col items-center text-center">
                          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                             Join with our community
