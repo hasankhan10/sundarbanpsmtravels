@@ -30,7 +30,7 @@ const destinations = [
     name: 'Paris, France',
     price: 890,
     rating: 5.0,
-    image: 'https://images.unsplash.com/photo-1502602898657-3e91760c0341?q=80&w=1470',
+    image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=1470',
     hint: 'paris eiffel'
   },
 ];

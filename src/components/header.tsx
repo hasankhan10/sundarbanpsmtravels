@@ -1,8 +1,6 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Heart, Search } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#" },
@@ -31,24 +29,7 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon">
-                <Search className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon">
-                <Heart className="h-5 w-5" />
-            </Button>
-            <div className="flex items-center gap-3">
-                <Avatar>
-                    <AvatarImage src="https://randomuser.me/api/portraits/men/75.jpg" alt="Mohammad" data-ai-hint="man portrait"/>
-                    <AvatarFallback>M</AvatarFallback>
-                </Avatar>
-                <div>
-                    <p className="text-sm text-muted-foreground">Hello i</p>
-                    <p className="font-semibold">Mohammad</p>
-                </div>
-            </div>
-        </div>
+        <Button>Sign Up</Button>
       </div>
     </header>
   );

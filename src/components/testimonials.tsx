@@ -22,7 +22,7 @@ export default function Testimonials() {
             <div className="relative w-[500px] h-[600px]">
               <div className="relative w-full h-full">
                 <Image 
-                    src="https://images.unsplash.com/photo-1528732224075-5cde374e5a56?q=80&w=1287"
+                    src="https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?q=80&w=1287"
                     data-ai-hint="happy traveler"
                     alt="Happy client"
                     layout="fill"
