@@ -3,11 +3,10 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#about" },
-  { label: "About Us", href: "#about-us" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about-us" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
@@ -22,8 +21,7 @@ export default function Header() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-base font-medium text-muted-foreground hover:text-primary transition-colors data-[active=true]:text-primary data-[active=true]:font-semibold"
-              data-active={link.label === 'Home'}
+              className="text-base font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               {link.label}
             </Link>
