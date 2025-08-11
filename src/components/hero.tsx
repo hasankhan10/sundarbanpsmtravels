@@ -1,35 +1,91 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Input } from "@/components/ui/input";
+import { Calendar, ChevronDown, MapPin, Users } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 export default function Hero() {
   return (
-    <section className="relative h-[80vh] w-full flex items-center justify-center text-white">
-      <div className="absolute inset-0 bg-black/50 z-0" />
-      <Image
-        src="https://placehold.co/1920x1080.png"
-        alt="Exotic destination background"
-        data-ai-hint="exotic destination"
-        fill
-        className="object-cover -z-10"
-        priority
-      />
-      <div className="container mx-auto px-4 md:px-6 text-center z-10">
-        <div className="max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-12 duration-1000">
-          <h1 className="text-4xl font-headline font-bold drop-shadow-2xl md:text-6xl lg:text-7xl">
-            Discover the World's Most Luxurious Adventures
+    <section className="relative w-full bg-secondary/30 pt-12 pb-20">
+      <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="space-y-6">
+          <h1 className="text-5xl font-bold tracking-tighter md:text-6xl lg:text-7xl">
+            Let's Explore the world
           </h1>
-          <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto drop-shadow-lg">
-            Curated journeys, seamless bookings, and unforgettable experiences—crafted for the discerning traveler.
+          <p className="max-w-xl text-lg text-muted-foreground">
+            Discover the World with Ease! Your dream destinations and unforgettable experiences are just a click away.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-lg transition-transform hover:scale-105">
-              <Link href="#book">Start Your Journey</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10 hover:text-white transition-colors">
-              <Link href="#destinations">Explore Destinations</Link>
-            </Button>
-          </div>
+          <Card className="shadow-lg">
+            <CardContent className="p-4">
+            <Tabs defaultValue="destination">
+              <TabsList className="grid w-full grid-cols-3 bg-secondary">
+                <TabsTrigger value="destination">Destination</TabsTrigger>
+                <TabsTrigger value="flight">Flight</TabsTrigger>
+                <TabsTrigger value="hotel">Hotel</TabsTrigger>
+              </TabsList>
+              <TabsContent value="destination" className="pt-6">
+                <div className="grid sm:grid-cols-3 gap-4 items-end">
+                    <div className="space-y-2">
+                        <label className="text-sm font-medium">Location</label>
+                        <div className="flex items-center gap-2 p-2 border rounded-md bg-background">
+                            <MapPin className="w-5 h-5 text-muted-foreground" />
+                            <Input placeholder="Lisbon, Portugal" className="border-0 p-0 h-auto focus-visible:ring-0"/>
+                        </div>
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-sm font-medium">Date</label>
+                         <div className="flex items-center gap-2 p-2 border rounded-md bg-background">
+                            <Calendar className="w-5 h-5 text-muted-foreground" />
+                            <Input placeholder="02-06-2025" className="border-0 p-0 h-auto focus-visible:ring-0"/>
+                        </div>
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-sm font-medium">Price</label>
+                        <div className="flex items-center gap-2 p-2 border rounded-md bg-background">
+                             <span className="text-muted-foreground">$</span>
+                            <Input placeholder="10,000 - 12,000" className="border-0 p-0 h-auto focus-visible:ring-0"/>
+                        </div>
+                    </div>
+                </div>
+                <Button className="w-full mt-6">Search Now</Button>
+              </TabsContent>
+            </Tabs>
+            </CardContent>
+          </Card>
+        </div>
+        <div className="relative h-full min-h-[500px] hidden lg:block">
+            <div className="absolute top-0 left-1/4 w-[300px] h-[200px] rounded-2xl overflow-hidden shadow-lg transform -rotate-6">
+                <Image src="https://placehold.co/300x200.png" data-ai-hint="people travelling" alt="Explore" layout="fill" objectFit="cover" />
+            </div>
+            <div className="absolute top-1/4 -left-8 w-[450px] h-[300px] rounded-2xl overflow-hidden shadow-2xl z-10">
+                <Image src="https://placehold.co/450x300.png" data-ai-hint="world landmarks collage" alt="Explore" layout="fill" objectFit="cover" />
+                <div className="absolute bottom-4 right-4 flex items-center gap-2 bg-white/80 backdrop-blur-sm p-2 rounded-full">
+                    <Avatar>
+                        <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="woman smiling"/>
+                        <AvatarFallback>A</AvatarFallback>
+                    </Avatar>
+                     <Avatar className="-ml-4 border-2 border-white">
+                        <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="man smiling"/>
+                        <AvatarFallback>B</AvatarFallback>
+                    </Avatar>
+                     <Avatar className="-ml-4 border-2 border-white">
+                        <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="person smiling"/>
+                        <AvatarFallback>C</AvatarFallback>
+                    </Avatar>
+                    <div>
+                        <p className="font-semibold text-sm">Reviews</p>
+                        <p className="text-xs">4.8 out of 5</p>
+                    </div>
+                </div>
+            </div>
+            <div className="absolute bottom-1/4 right-0 w-[400px] h-[250px] rounded-2xl overflow-hidden shadow-lg transform rotate-3">
+                 <Image src="https://placehold.co/400x250.png" data-ai-hint="paris eiffel tower" alt="Explore" layout="fill" objectFit="cover" />
+            </div>
+             <div className="absolute bottom-0 left-1/2 w-[350px] h-[220px] rounded-2xl overflow-hidden shadow-lg transform -translate-x-1/2">
+                 <Image src="https://placehold.co/350x220.png" data-ai-hint="airplane sky" alt="Explore" layout="fill" objectFit="cover" />
+            </div>
         </div>
       </div>
     </section>

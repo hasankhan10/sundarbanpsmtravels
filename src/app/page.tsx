@@ -1,10 +1,11 @@
-import AiDestinationFinder from "@/components/ai-destination-finder";
+import Community from "@/components/community";
 import Experiences from "@/components/experiences";
 import FeaturedDestinations from "@/components/featured-destinations";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Testimonials from "@/components/testimonials";
+import WhyChooseUs from "@/components/why-choose-us";
 
 export default function Home() {
   return (
@@ -14,8 +15,9 @@ export default function Home() {
         <Hero />
         <FeaturedDestinations />
         <Experiences />
-        <AiDestinationFinder />
+        <WhyChooseUs />
         <Testimonials />
+        <Community />
       </main>
       <Footer />
     </div>
