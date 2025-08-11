@@ -9,28 +9,28 @@ const destinations = [
     price: 890,
     rating: 5.0,
     image: 'https://placehold.co/400x500.png',
-    hint: 'greece island'
+    hint: 'santorini greece'
   },
   {
-    name: 'Dubai Sky Drive',
+    name: 'Dubai, UAE',
     price: 890,
     rating: 5.0,
     image: 'https://placehold.co/400x500.png',
-    hint: 'dubai skydive'
+    hint: 'dubai city'
   },
   {
-    name: 'Dubai Tower',
+    name: 'Kyoto, Japan',
     price: 890,
     rating: 5.0,
     image: 'https://placehold.co/400x500.png',
-    hint: 'dubai tower'
+    hint: 'kyoto shrine'
   },
   {
-    name: 'Santorini, Greece',
+    name: 'Paris, France',
     price: 890,
     rating: 5.0,
     image: 'https://placehold.co/400x500.png',
-    hint: 'greece sunset'
+    hint: 'paris eiffel'
   },
 ];
 

@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
             <div className="w-[500px] h-[500px] bg-primary/20 rounded-full blur-3xl"></div>
             <Image
               src="https://placehold.co/500x500.png"
-              data-ai-hint="travel mobile app"
+              data-ai-hint="travel planning"
               alt="Why Choose Us Image"
               width={500}
               height={500}

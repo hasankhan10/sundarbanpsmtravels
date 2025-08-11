@@ -21,7 +21,7 @@ export default function Testimonials() {
             <div className="relative">
                 <Image 
                     src="https://placehold.co/500x600.png"
-                    data-ai-hint="happy tourist"
+                    data-ai-hint="happy traveler"
                     alt="Happy client"
                     width={500}
                     height={600}

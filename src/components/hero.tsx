@@ -57,21 +57,21 @@ export default function Hero() {
         </div>
         <div className="relative h-full min-h-[500px] hidden lg:block">
             <div className="absolute top-0 left-1/4 w-[300px] h-[200px] rounded-2xl overflow-hidden shadow-lg transform -rotate-6">
-                <Image src="https://placehold.co/300x200.png" data-ai-hint="people travelling" alt="Explore" layout="fill" objectFit="cover" />
+                <Image src="https://placehold.co/300x200.png" data-ai-hint="beach vacation" alt="Explore" layout="fill" objectFit="cover" />
             </div>
             <div className="absolute top-1/4 -left-8 w-[450px] h-[300px] rounded-2xl overflow-hidden shadow-2xl z-10">
-                <Image src="https://placehold.co/450x300.png" data-ai-hint="world landmarks collage" alt="Explore" layout="fill" objectFit="cover" />
+                <Image src="https://placehold.co/450x300.png" data-ai-hint="mountain adventure" alt="Explore" layout="fill" objectFit="cover" />
                 <div className="absolute bottom-4 right-4 flex items-center gap-2 bg-white/80 backdrop-blur-sm p-2 rounded-full">
                     <Avatar>
-                        <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="woman smiling"/>
+                        <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="woman traveler"/>
                         <AvatarFallback>A</AvatarFallback>
                     </Avatar>
                      <Avatar className="-ml-4 border-2 border-white">
-                        <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="man smiling"/>
+                        <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="man explorer"/>
                         <AvatarFallback>B</AvatarFallback>
                     </Avatar>
                      <Avatar className="-ml-4 border-2 border-white">
-                        <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="person smiling"/>
+                        <AvatarImage src="https://placehold.co/40x40.png" data-ai-hint="tourist smiling"/>
                         <AvatarFallback>C</AvatarFallback>
                     </Avatar>
                     <div>
@@ -81,10 +81,10 @@ export default function Hero() {
                 </div>
             </div>
             <div className="absolute bottom-1/4 right-0 w-[400px] h-[250px] rounded-2xl overflow-hidden shadow-lg transform rotate-3">
-                 <Image src="https://placehold.co/400x250.png" data-ai-hint="paris eiffel tower" alt="Explore" layout="fill" objectFit="cover" />
+                 <Image src="https://placehold.co/400x250.png" data-ai-hint="cityscape europe" alt="Explore" layout="fill" objectFit="cover" />
             </div>
              <div className="absolute bottom-0 left-1/2 w-[350px] h-[220px] rounded-2xl overflow-hidden shadow-lg transform -translate-x-1/2">
-                 <Image src="https://placehold.co/350x220.png" data-ai-hint="airplane sky" alt="Explore" layout="fill" objectFit="cover" />
+                 <Image src="https://placehold.co/350x220.png" data-ai-hint="tropical island" alt="Explore" layout="fill" objectFit="cover" />
             </div>
         </div>
       </div>
