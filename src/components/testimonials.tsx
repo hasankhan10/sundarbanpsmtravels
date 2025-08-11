@@ -1,3 +1,4 @@
+
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
@@ -18,14 +19,14 @@ export default function Testimonials() {
     <section id="about-us" className="w-full py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
+            <div className="relative w-[500px] h-[600px]">
                 <Image 
                     src="https://placehold.co/500x600.png"
                     data-ai-hint="happy traveler"
                     alt="Happy client"
-                    width={500}
-                    height={600}
-                    className="rounded-2xl object-cover"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-2xl"
                 />
             </div>
             <div>
