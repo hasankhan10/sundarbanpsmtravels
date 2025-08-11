@@ -19,31 +19,28 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
-      let currentSection = "";
+      const scrollPosition = window.scrollY + 100; // a little bit of offset
+      let currentSectionId = "home";
 
-      navLinks.forEach(link => {
-        const section = document.getElementById(link.href.substring(1));
-        if (section) {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                currentSection = link.label;
-            }
+      for (const link of navLinks) {
+        const sectionId = link.href.substring(1);
+        const section = document.getElementById(sectionId);
+
+        if (section && scrollPosition >= section.offsetTop) {
+          currentSectionId = sectionId;
         }
-      });
-        
-      if(currentSection !== ""){
-        setActiveLink(currentSection);
-      } else if (window.scrollY < 200) {
-        setActiveLink("Home");
+      }
+      
+      const currentLink = navLinks.find(link => link.href.substring(1) === currentSectionId);
+      if(currentLink) {
+        setActiveLink(currentLink.label);
       }
     };
 
-    if(pathname === '/'){
-        window.addEventListener("scroll", handleScroll);
-        handleScroll();
-        return () => window.removeEventListener("scroll", handleScroll);
+    if (pathname === '/') {
+      window.addEventListener("scroll", handleScroll);
+      handleScroll(); // Initial check
+      return () => window.removeEventListener("scroll", handleScroll);
     }
   }, [pathname]);
 
@@ -57,6 +54,7 @@ export default function Header() {
           top: targetElement.offsetTop,
           behavior: "smooth",
         });
+        setActiveLink(navLinks.find(l => l.href === href)?.label || "Home");
       }
     }
   };
@@ -64,8 +62,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-6 h-24 flex items-center justify-between">
-        <Link href="/" className="text-3xl font-bold text-foreground">
-          Traventure
+        <Link href="/" className="text-xl font-bold text-foreground">
+          SUNDARBAN PSM TRAVELS
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (

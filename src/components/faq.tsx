@@ -7,8 +7,8 @@ import {
 
 const faqs = [
     {
-        question: "What is Traventure?",
-        answer: "Traventure is a travel agency that specializes in creating custom travel experiences for discerning travelers. We handle everything from planning and booking to on-the-ground support."
+        question: "What is SUNDARBAN PSM TRAVELS?",
+        answer: "SUNDARBAN PSM TRAVELS is a travel agency that specializes in creating custom travel experiences for discerning travelers. We handle everything from planning and booking to on-the-ground support."
     },
     {
         question: "How do I book a trip?",

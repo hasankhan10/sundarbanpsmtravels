@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-6 py-8 lg:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="space-y-4 col-span-1 md:col-span-2 lg:col-span-1">
-            <h3 className="text-2xl font-bold text-primary">Traventure</h3>
+            <h3 className="text-2xl font-bold text-primary">SUNDARBAN PSM TRAVELS</h3>
             <p className="text-muted-foreground">
               Discover the World with Ease! Your dream destinations and unforgettable experiences are just a click away.
             </p>
@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-6 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Traventure. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} SUNDARBAN PSM TRAVELS. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
