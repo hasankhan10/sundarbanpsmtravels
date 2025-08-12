@@ -50,7 +50,7 @@ export default function FeaturedDestinations() {
                 Popular Destinations
             </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {destinations.map((dest, index) => (
             <MotionDiv
               key={index}
@@ -66,9 +66,9 @@ export default function FeaturedDestinations() {
                     src={dest.image}
                     alt={dest.name}
                     width={400}
-                    height={500}
+                    height={300}
                     data-ai-hint={dest.hint}
-                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-auto aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="p-4 bg-card">
                     <div className="flex justify-between items-start">

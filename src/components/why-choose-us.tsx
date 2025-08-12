@@ -41,15 +41,15 @@ export default function WhyChooseUs() {
             </ul>
             <Button className="mt-8">Learn More</Button>
           </div>
-          <div className="relative flex items-center justify-center">
-            <div className="w-[500px] h-[500px] bg-primary/20 rounded-full blur-3xl"></div>
+          <div className="relative flex items-center justify-center h-[300px] lg:h-[500px]">
+            <div className="w-full h-full max-w-[500px] max-h-[500px] bg-primary/20 rounded-full blur-3xl"></div>
             <Image
               src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1287"
               data-ai-hint="travel planning"
               alt="Why Choose Us Image"
               width={500}
               height={500}
-              className="rounded-2xl object-contain absolute"
+              className="rounded-2xl object-contain absolute w-full h-full"
             />
           </div>
         </div>

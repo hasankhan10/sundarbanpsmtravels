@@ -9,16 +9,16 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative w-full bg-secondary/30 pt-12 pb-20">
+    <section id="home" className="relative w-full bg-secondary/30 pt-12 pb-20 lg:pt-24 lg:pb-32">
       <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6">
-          <h1 className="text-5xl font-bold tracking-tighter md:text-6xl lg:text-7xl">
+        <div className="space-y-6 text-center lg:text-left">
+          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
             Let's Explore the world
           </h1>
-          <p className="max-w-xl text-lg text-muted-foreground">
+          <p className="max-w-xl mx-auto lg:mx-0 text-lg text-muted-foreground">
             Discover the World with Ease! Your dream destinations and unforgettable experiences are just a click away.
           </p>
-          <Card className="shadow-lg">
+          <Card className="shadow-lg text-left">
             <CardContent className="p-4">
             <Tabs defaultValue="destination">
               <TabsList className="grid w-full grid-cols-3 bg-secondary">
@@ -56,7 +56,7 @@ export default function Hero() {
             </CardContent>
           </Card>
         </div>
-        <div className="relative h-full min-h-[500px] hidden lg:block">
+        <div className="relative h-full min-h-[400px] md:min-h-[500px] hidden lg:block">
             <div className="absolute top-0 left-1/4 w-[300px] h-[200px] rounded-2xl overflow-hidden shadow-lg transform -rotate-6">
               <div className="relative w-full h-full">
                 <Image src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?q=80&w=1470" data-ai-hint="beach vacation" alt="Explore" layout="fill" objectFit="cover" />

@@ -5,6 +5,12 @@ import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -16,18 +22,24 @@ const navLinks = [
 export default function Header() {
   const pathname = usePathname();
   const [activeLink, setActiveLink] = useState("Home");
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100; // a little bit of offset
+      const scrollPosition = window.scrollY + 100;
       let currentSectionId = "home";
 
-      for (const link of navLinks) {
-        const sectionId = link.href.substring(1);
-        const section = document.getElementById(sectionId);
+      if (window.scrollY < 200) {
+        currentSectionId = 'home';
+      } else {
+        for (const link of navLinks) {
+          if (link.href === "#home") continue;
+          const sectionId = link.href.substring(1);
+          const section = document.getElementById(sectionId);
 
-        if (section && scrollPosition >= section.offsetTop) {
-          currentSectionId = sectionId;
+          if (section && scrollPosition >= section.offsetTop) {
+            currentSectionId = sectionId;
+          }
         }
       }
       
@@ -39,12 +51,13 @@ export default function Header() {
 
     if (pathname === '/') {
       window.addEventListener("scroll", handleScroll);
-      handleScroll(); // Initial check
+      handleScroll();
       return () => window.removeEventListener("scroll", handleScroll);
     }
   }, [pathname]);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setIsSheetOpen(false); // Close sheet on link click
     if (href.startsWith("#")) {
       e.preventDefault();
       const targetId = href.substring(1);
@@ -54,15 +67,18 @@ export default function Header() {
           top: targetElement.offsetTop,
           behavior: "smooth",
         });
-        setActiveLink(navLinks.find(l => l.href === href)?.label || "Home");
+        const clickedLink = navLinks.find(l => l.href === href);
+        if (clickedLink) {
+          setActiveLink(clickedLink.label);
+        }
       }
     }
   };
-
+  
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm">
-      <div className="container mx-auto px-4 md:px-6 h-24 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold text-foreground">
+      <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
+        <Link href="/" className="text-lg font-bold text-foreground">
           SUNDARBAN PSM TRAVELS
         </Link>
         <nav className="hidden md:flex items-center gap-8">
@@ -80,7 +96,45 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <Button>Sign Up</Button>
+        <div className="hidden md:block">
+          <Button>Sign Up</Button>
+        </div>
+
+        <div className="md:hidden">
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Open Menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[280px]">
+              <div className="p-6">
+                <div className="mb-8 flex justify-between items-center">
+                  <Link href="/" className="text-lg font-bold text-foreground" onClick={() => setIsSheetOpen(false)}>
+                    SUNDARBAN PSM TRAVELS
+                  </Link>
+                </div>
+                <nav className="flex flex-col gap-6">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      onClick={(e) => handleLinkClick(e, link.href)}
+                      className={cn(
+                        "text-lg font-medium text-muted-foreground transition-colors hover:text-primary",
+                        activeLink === link.label && "text-primary"
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </nav>
+                <Button className="w-full mt-8">Sign Up</Button>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );

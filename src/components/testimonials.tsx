@@ -19,7 +19,7 @@ export default function Testimonials() {
     <section id="about-us" className="w-full py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative w-[500px] h-[600px]">
+            <div className="relative w-full h-[400px] lg:w-[500px] lg:h-[600px]">
               <div className="relative w-full h-full">
                 <Image 
                     src="https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?q=80&w=1287"
@@ -31,11 +31,11 @@ export default function Testimonials() {
                 />
               </div>
             </div>
-            <div>
+            <div className="text-center lg:text-left">
                  <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-8">
                     What our client say about us
                 </h2>
-                <Card className="shadow-lg relative">
+                <Card className="shadow-lg relative text-left">
                     <CardContent className="p-8">
                         <p className="text-lg text-muted-foreground italic">
                         A fantastic experience from start to finish! The team made our trip effortless and memorable with their excellent service and attention to detail. Highly recommend for hassle-free travel planning!
@@ -49,7 +49,7 @@ export default function Testimonials() {
                         </div>
                     </CardContent>
                 </Card>
-                <div className="flex gap-4 mt-8">
+                <div className="flex gap-4 mt-8 justify-center lg:justify-start">
                     <Button variant="outline" size="icon" className="rounded-full h-12 w-12">
                         <ChevronLeft />
                     </Button>
