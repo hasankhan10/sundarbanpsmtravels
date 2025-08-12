@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -5,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -26,35 +27,45 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100;
-      let currentSectionId = "home";
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      let newActiveLink = "Home";
 
-      if (window.scrollY < 200) {
-        currentSectionId = 'home';
-      } else {
-        for (const link of navLinks) {
-          if (link.href === "#home") continue;
-          const sectionId = link.href.substring(1);
-          const section = document.getElementById(sectionId);
+      // Check sections from bottom to top
+      for (let i = navLinks.length - 1; i >= 0; i--) {
+        const link = navLinks[i];
+        const sectionId = link.href.substring(1);
+        const section = document.getElementById(sectionId);
 
-          if (section && scrollPosition >= section.offsetTop) {
-            currentSectionId = sectionId;
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+
+          // A section is considered "active" if its top is within the viewport
+          // or if it takes up more than half the screen.
+          // The offset of 150px helps trigger the change a little earlier.
+          if (scrollPosition + windowHeight / 2 >= sectionTop - 150) {
+            newActiveLink = link.label;
+            break; 
           }
         }
       }
       
-      const currentLink = navLinks.find(link => link.href.substring(1) === currentSectionId);
-      if(currentLink) {
-        setActiveLink(currentLink.label);
+      // If at the very top of the page, "Home" should be active.
+      if (scrollPosition < 200) {
+        newActiveLink = "Home";
       }
+
+      setActiveLink(newActiveLink);
     };
 
     if (pathname === '/') {
       window.addEventListener("scroll", handleScroll);
-      handleScroll();
+      handleScroll(); // Initial check
       return () => window.removeEventListener("scroll", handleScroll);
     }
   }, [pathname]);
+
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     setIsSheetOpen(false); // Close sheet on link click
@@ -63,14 +74,12 @@ export default function Header() {
       const targetId = href.substring(1);
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
+        // We can't just set the active link here, because the scroll event will fire
+        // and override it. Instead, we scroll and let the scroll handler update the state.
         window.scrollTo({
           top: targetElement.offsetTop,
           behavior: "smooth",
         });
-        const clickedLink = navLinks.find(l => l.href === href);
-        if (clickedLink) {
-          setActiveLink(clickedLink.label);
-        }
       }
     }
   };
