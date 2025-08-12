@@ -10,6 +10,8 @@ import { Menu } from "lucide-react";
 import {
   Sheet,
   SheetContent,
+  SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 
@@ -28,34 +30,27 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      let newActiveLink = "Home";
-
-      // Check sections from bottom to top
-      for (let i = navLinks.length - 1; i >= 0; i--) {
-        const link = navLinks[i];
-        const sectionId = link.href.substring(1);
-        const section = document.getElementById(sectionId);
-
-        if (section) {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-
-          // A section is considered "active" if its top is within the viewport
-          // or if it takes up more than half the screen.
-          // The offset of 150px helps trigger the change a little earlier.
-          if (scrollPosition + windowHeight / 2 >= sectionTop - 150) {
-            newActiveLink = link.label;
-            break; 
-          }
-        }
-      }
       
       // If at the very top of the page, "Home" should be active.
       if (scrollPosition < 200) {
-        newActiveLink = "Home";
+        setActiveLink("Home");
+        return;
       }
 
+      let currentSectionId = "home";
+      for (const link of navLinks) {
+          const sectionId = link.href.substring(1);
+          const section = document.getElementById(sectionId);
+          if (section) {
+              const sectionTop = section.offsetTop;
+              const sectionHeight = section.offsetHeight;
+              if (scrollPosition >= sectionTop - 150 && scrollPosition < sectionTop + sectionHeight - 150) {
+                  currentSectionId = sectionId;
+              }
+          }
+      }
+      
+      const newActiveLink = navLinks.find(link => link.href === `#${currentSectionId}`)?.label || 'Home';
       setActiveLink(newActiveLink);
     };
 
@@ -118,6 +113,9 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px]">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Menu</SheetTitle>
+              </SheetHeader>
               <div className="p-6">
                 <div className="mb-8 flex justify-between items-center">
                   <Link href="/" className="text-lg font-bold text-foreground" onClick={() => setIsSheetOpen(false)}>
