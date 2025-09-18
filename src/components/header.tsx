@@ -14,6 +14,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { ThemeToggle } from "./theme-toggle";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -31,7 +32,6 @@ export default function Header() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       
-      // If at the very top of the page, "Home" should be active.
       if (scrollPosition < 200) {
         setActiveLink("Home");
         return;
@@ -56,21 +56,19 @@ export default function Header() {
 
     if (pathname === '/') {
       window.addEventListener("scroll", handleScroll);
-      handleScroll(); // Initial check
+      handleScroll(); 
       return () => window.removeEventListener("scroll", handleScroll);
     }
   }, [pathname]);
 
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    setIsSheetOpen(false); // Close sheet on link click
+    setIsSheetOpen(false); 
     if (href.startsWith("#")) {
       e.preventDefault();
       const targetId = href.substring(1);
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
-        // We can't just set the active link here, because the scroll event will fire
-        // and override it. Instead, we scroll and let the scroll handler update the state.
         window.scrollTo({
           top: targetElement.offsetTop,
           behavior: "smooth",
@@ -100,11 +98,13 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-4">
+          <ThemeToggle />
           <Button>Sign Up</Button>
         </div>
 
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
